@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cat-survey"
+dynamic = ["version"]
+description = "Survey response classification powered by LLMs"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "GPL-3.0-or-later"
+keywords = ["llm", "survey", "classification", "text analysis", "open-ended responses"]
+authors = [
+  { name = "Chris Soria", email = "chrissoria@berkeley.edu" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+dependencies = [
+  "cat-stack>=0.1.0",
+  "pandas",
+]
+
+[project.optional-dependencies]
+pdf = ["cat-stack[pdf]"]
+embeddings = ["cat-stack[embeddings]"]
+
+[project.urls]
+Documentation = "https://github.com/chrissoria/cat-survey#readme"
+Issues = "https://github.com/chrissoria/cat-survey/issues"
+Source = "https://github.com/chrissoria/cat-survey"
+
+[tool.hatch.version]
+path = "src/cat_survey/__about__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cat_survey"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/cat_survey/**/*.py",
+]
