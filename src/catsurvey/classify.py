@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import cat_stack
+import catstack
 
 from ._utils import build_survey_description
 
@@ -18,7 +18,7 @@ def classify(
 ):
     """Classify survey responses into categories using LLMs.
 
-    Thin wrapper around cat_stack.classify() that injects survey-specific
+    Thin wrapper around catstack.classify() that injects survey-specific
     prompt framing ("A respondent was asked: ...") into the description.
 
     Parameters
@@ -36,7 +36,7 @@ def classify(
     check_verbosity : bool
         Whether to check category verbosity. Default True.
     **kwargs
-        All other arguments are passed through to cat_stack.classify().
+        All other arguments are passed through to catstack.classify().
 
     Returns
     -------
@@ -44,7 +44,7 @@ def classify(
         Classification results.
     """
     desc = build_survey_description(survey_question, description)
-    return cat_stack.classify(
+    return catstack.classify(
         input_data,
         categories,
         description=desc,

@@ -23,7 +23,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
 ]
 dependencies = [
-  "cat-stack>=0.1.0",
+  "cat-stack>=1.0.19",
   "pandas",
 ]
 
@@ -37,12 +37,13 @@ Issues = "https://github.com/chrissoria/cat-survey/issues"
 Source = "https://github.com/chrissoria/cat-survey"
 
 [tool.hatch.version]
-path = "src/cat_survey/__about__.py"
+path = "src/catsurvey/__about__.py"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/cat_survey"]
+packages = ["src/catsurvey", "src/cat_survey"]
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "src/cat_survey/**/*.py",
+    "src/catsurvey/**/*.py",
+    "src/cat_survey/__init__.py",
 ]

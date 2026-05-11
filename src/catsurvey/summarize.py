@@ -2,24 +2,24 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import cat_stack
+import catstack
 
 
 def summarize(input_data, **kwargs):
     """Summarize survey responses using LLMs.
 
-    Pure pass-through to cat_stack.summarize().
+    Pure pass-through to catstack.summarize().
 
     Parameters
     ----------
     input_data : list[str], str, or PDF directory
         Survey responses or documents to summarize.
     **kwargs
-        All arguments are passed through to cat_stack.summarize().
+        All arguments are passed through to catstack.summarize().
 
     Returns
     -------
     pd.DataFrame
         Summarization results.
     """
-    return cat_stack.summarize(input_data, **kwargs)
+    return catstack.summarize(input_data, **kwargs)

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import cat_stack
+import catstack
 
 from ._utils import build_survey_description
 
@@ -16,7 +16,7 @@ def extract(
 ):
     """Discover categories from survey responses using LLMs.
 
-    Thin wrapper around cat_stack.extract() that injects survey-specific
+    Thin wrapper around catstack.extract() that injects survey-specific
     prompt framing ("A respondent was asked: ...") into the description.
 
     Parameters
@@ -30,7 +30,7 @@ def extract(
     description : str
         Additional context about the survey or responses.
     **kwargs
-        All other arguments are passed through to cat_stack.extract().
+        All other arguments are passed through to catstack.extract().
 
     Returns
     -------
@@ -38,7 +38,7 @@ def extract(
         Dictionary with 'counts_df', 'top_categories', and 'raw_top_text'.
     """
     desc = build_survey_description(survey_question, description)
-    return cat_stack.extract(
+    return catstack.extract(
         input_data,
         api_key,
         survey_question=desc,

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
 
-import cat_stack
+import catstack
 
 from ._utils import build_survey_description
 
@@ -16,7 +16,7 @@ def explore(
 ):
     """Explore raw categories from survey responses (no deduplication).
 
-    Thin wrapper around cat_stack.explore() that injects survey-specific
+    Thin wrapper around catstack.explore() that injects survey-specific
     prompt framing ("A respondent was asked: ...") into the description.
 
     Parameters
@@ -30,7 +30,7 @@ def explore(
     description : str
         Additional context about the survey or responses.
     **kwargs
-        All other arguments are passed through to cat_stack.explore().
+        All other arguments are passed through to catstack.explore().
 
     Returns
     -------
@@ -38,7 +38,7 @@ def explore(
         Raw list of categories (with duplicates across iterations).
     """
     desc = build_survey_description(survey_question, description)
-    return cat_stack.explore(
+    return catstack.explore(
         input_data,
         api_key,
         description=desc,
