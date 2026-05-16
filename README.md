@@ -22,9 +22,9 @@ pip install "cat-survey[embeddings]"  # Embedding-based similarity scoring
 ### Classify survey responses
 
 ```python
-import cat_survey
+import catsurvey
 
-results = cat_survey.classify(
+results = catsurvey.classify(
     input_data=["I feel great about the program", "It was a waste of time"],
     categories=["Positive", "Negative", "Neutral"],
     survey_question="How do you feel about the new wellness program?",
@@ -35,7 +35,7 @@ results = cat_survey.classify(
 ### Discover categories from open-ended responses
 
 ```python
-result = cat_survey.extract(
+result = catsurvey.extract(
     input_data=responses,
     api_key="sk-...",
     survey_question="What changes would you suggest for the workplace?",
@@ -46,7 +46,7 @@ print(result["top_categories"])
 ### Summarize responses
 
 ```python
-summaries = cat_survey.summarize(
+summaries = catsurvey.summarize(
     input_data=responses,
     api_key="sk-...",
     description="Open-ended feedback from employee satisfaction survey",
