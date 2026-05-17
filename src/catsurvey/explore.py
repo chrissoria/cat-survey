@@ -42,5 +42,6 @@ def explore(
         input_data,
         api_key,
         description=desc,
+        domain="survey",
         **kwargs,
     )

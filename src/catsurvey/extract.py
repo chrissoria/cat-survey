@@ -42,5 +42,6 @@ def extract(
         input_data,
         api_key,
         survey_question=desc,
+        domain="survey",
         **kwargs,
     )
